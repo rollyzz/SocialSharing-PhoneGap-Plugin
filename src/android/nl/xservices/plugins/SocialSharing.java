@@ -176,7 +176,7 @@ public class SocialSharing extends CordovaPlugin {
         }
 
         // this was added to start the intent in a new window as suggested in #300 to prevent crashes upon return
-        draft.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        // draft.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         draft.setType("application/octet-stream");
 
@@ -302,7 +302,7 @@ public class SocialSharing extends CordovaPlugin {
         }
 
         // this was added to start the intent in a new window as suggested in #300 to prevent crashes upon return
-        sendIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        // sendIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         if (appPackageName != null) {
           String packageName = appPackageName;
@@ -563,7 +563,7 @@ public class SocialSharing extends CordovaPlugin {
           intent.setData(Uri.parse("https://api.whatsapp.com/send?phone=" + number + "&text=" + URLEncoder.encode(shareMessage, "UTF-8")));
           // this was added to start the intent in a new window as suggested in #300 to prevent crashes upon return
           // update: didn't help (doesn't seem to hurt either though)
-          intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+          // intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
           // as an experiment for #300 we're explicitly running it on the ui thread here
           cordova.getActivity().runOnUiThread(new Runnable() {
@@ -619,7 +619,7 @@ public class SocialSharing extends CordovaPlugin {
             }
           }
           // this was added to start the intent in a new window as suggested in #300 to prevent crashes upon return
-          intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+          // intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
           cordova.startActivityForResult(plugin, intent, 0);
         } catch (Exception e) {
